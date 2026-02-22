@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Montserrat", ui-monospace, SFMono-Regular, monospace;
+  --font-display: "Montserrat", sans-serif;
+
+  --color-neon-purple: #9333EA;
+  --color-neon-blue: #2563EB;
+  --color-neon-green: #22C55E;
+  --color-brutal-black: #0A0A0B;
+  --color-brutal-white: #FAFAFA;
+}
+
+@layer base {
+  body {
+    @apply bg-brutal-black text-brutal-white font-sans antialiased;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-white/10 rounded-full hover:bg-white/20 transition-colors;
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 3s ease infinite;
+}
+
+.markdown-body {
+  @apply text-sm leading-relaxed space-y-4;
+}
+
+.markdown-body p {
+  @apply mb-4;
+}
+
+.markdown-body h1, .markdown-body h2, .markdown-body h3 {
+  @apply font-display uppercase tracking-tight mt-6 mb-2 text-neon-purple;
+}
+
+.markdown-body ul, .markdown-body ol {
+  @apply ml-6 mb-4 list-disc;
+}
+
+.markdown-body code {
+  @apply font-mono bg-white/10 px-1 rounded;
+}
+
+.markdown-body pre {
+  @apply my-4 rounded-lg overflow-hidden;
+}
+

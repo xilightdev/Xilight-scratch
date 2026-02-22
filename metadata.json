@@ -1,0 +1,5 @@
+{
+  "name": "Xilight",
+  "description": "A next-generation multimodal AI assistant with visual knowledge mapping and creative canvas capabilities.",
+  "requestFramePermissions": ["camera", "microphone"]
+}
